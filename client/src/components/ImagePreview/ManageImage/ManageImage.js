@@ -1,9 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import SelectionRow from "./SelectionRow";
 import Button from "../../Forms/Inputs/Button";
 
 const ManageImage = (props) => {
-  console.log(props.imageToDisplay.comments);
   return (
     <div>
       <div className="manage-image__row">

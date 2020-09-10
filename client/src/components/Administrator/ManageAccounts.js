@@ -8,7 +8,7 @@ const ManageAccounts = () => {
   useEffect(() => {
     getUsers();
   }, []);
-  const [users, setUsers] = useState([]);
+
   const getUsers = () => {
     axios
       .get("http://localhost:3000/users")
@@ -16,6 +16,7 @@ const ManageAccounts = () => {
       .catch((err) => console.log(err));
   };
   const reloadUsers = () => getUsers();
+  const [users, setUsers] = useState([]);
   return (
     <div className="manage-accounts">
       <div className="title">Manage accounts</div>

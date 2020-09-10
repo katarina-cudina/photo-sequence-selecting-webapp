@@ -9,7 +9,6 @@ const ManageImageAdmin = (props) => {
     props.imageToDisplay.comments ? props.imageToDisplay.comments : ""
   );
   const reviewImage = (review_state) => {
-    setComments("");
     axios
       .post("http://localhost:3000/images/reviewImage", {
         review_state,
@@ -17,14 +16,11 @@ const ManageImageAdmin = (props) => {
         id: props.imageToDisplay.id,
       })
       .then((res) => {
-        console.log(res);
+        setComments("");
         res.status === 200 && props.nextImage(1);
       })
       .catch((err) => console.log(err));
   };
-  useEffect(() => {
-    console.log(props);
-  }, []);
   return (
     <div>
       <div className="manage-image__row">

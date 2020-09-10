@@ -19,6 +19,4 @@ images.get("/updateImages", insertImages);
 images.post("/insertSelection", insertSelection);
 images.post("/reviewImage", reviewImage);
 
-//approveaj ili disapproveaj sliku
-
 module.exports = images;

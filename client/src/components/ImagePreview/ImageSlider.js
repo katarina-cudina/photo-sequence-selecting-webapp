@@ -30,7 +30,6 @@ const ImageSlider = (props) => {
   };
 
   useEffect(() => {
-    console.log(props.view);
     async function fetchData() {
       await loadImageList();
     }

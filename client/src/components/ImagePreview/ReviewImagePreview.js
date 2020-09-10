@@ -8,8 +8,6 @@ function AreaSelector(props) {
   const imgRef = useRef(null);
   const [crop, setCrop] = useState({ unit: "%", aspect: null });
   const [imageSrc, setImageSrc] = useState(null);
-  const [selectionArray, setSelectionArray] = useState([]);
-  const [currentSelection, setSelection] = useState({});
 
   const onLoad = useCallback((img) => {
     imgRef.current = img;
@@ -49,7 +47,6 @@ function AreaSelector(props) {
   }, [props.imageToDisplay]);
 
   useEffect(() => {
-    console.log(props);
     loadImage();
   }, []);
   return (

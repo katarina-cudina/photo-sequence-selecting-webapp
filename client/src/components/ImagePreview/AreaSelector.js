@@ -1,12 +1,15 @@
 import React, { useState, useCallback, useRef, useEffect } from "react";
+
 import ReactCrop from "react-image-crop";
 import "react-image-crop/dist/ReactCrop.css";
+
 import ManageImage from "./ManageImage/ManageImage";
 import axios from "axios";
 import ManageImageAdmin from "./ManageImage/ManageImageAdmin";
 
 function AreaSelector(props) {
   const imgRef = useRef(null);
+
   const [crop, setCrop] = useState({ unit: "%", aspect: null });
   const [imageSrc, setImageSrc] = useState(null);
   const [selectionArray, setSelectionArray] = useState([]);
@@ -44,7 +47,6 @@ function AreaSelector(props) {
     array.push(currentSelection);
     setSelectionArray(array);
     setCrop({ unit: "%", aspect: null });
-    console.log(array);
   };
   const saveCrop = (crop) => {
     delete crop.aspect;

@@ -16,6 +16,12 @@ const AdminView = (props) => {
       )
       .catch((err) => console.log(err));
   };
+  const updateImagesTable = () => {
+    axios
+      .get("http://localhost:3000/images")
+      .then((res) => alert("Completed !"))
+      .catch((err) => console.log(err));
+  };
 
   return (
     <div className="admin-view">
@@ -31,7 +37,9 @@ const AdminView = (props) => {
           </div>
           {optionsOpened && (
             <div>
-              {" "}
+              <div className="suboption" onClick={() => updateImagesTable}>
+                Update images table
+              </div>
               <div
                 className="suboption"
                 onClick={() => redirectToRoute("/administrator/all-images")}
