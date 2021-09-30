@@ -1,6 +1,7 @@
 import React from "react";
 import SelectionRow from "./SelectionRow";
 import Button from "../../Forms/Inputs/Button";
+import "../ImagePreview.css";
 
 const ManageImage = (props) => {
   return (
@@ -14,6 +15,7 @@ const ManageImage = (props) => {
                 selection={el}
                 index={i}
                 removeFromArray={props.removeFromArray}
+                displaySelection={props.displaySelection}
               />
             ))}
           </tbody>

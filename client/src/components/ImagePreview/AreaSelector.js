@@ -53,6 +53,7 @@ function AreaSelector(props) {
     delete crop.unit;
     setSelection(crop);
   };
+
   const loadImage = () => {
     axios
       .get(`http://localhost:3000/images/${props.imageToDisplay.image_name}`, {
@@ -68,7 +69,18 @@ function AreaSelector(props) {
         setImageSrc("data:;base64," + base64);
       });
   };
-  const displaySelection = () => {};
+  const displaySelection = (index) => {
+    const array =
+      props.view === "review-existing-images"
+        ? props.imageToDisplay.selection
+        : selectionArray;
+    const selectionToDisplay = {
+      ...array[index],
+      unit: "px",
+      aspect: null,
+    };
+    setCrop(selectionToDisplay);
+  };
   var isFirstRun = useRef(true);
   useEffect(() => {
     if (isFirstRun.current) {
@@ -79,6 +91,8 @@ function AreaSelector(props) {
   }, [props.imageToDisplay]);
 
   useEffect(() => {
+    props.view === "review-existing-images" &&
+      setSelectionArray(props.imageToDisplay.selection);
     loadImage();
   }, []);
   return (
@@ -95,11 +109,7 @@ function AreaSelector(props) {
       ) : (
         <ManageImage
           addSelection={addSelection}
-          selection={
-            props.view === "review-existing-images"
-              ? props.imageToDisplay.selection
-              : selectionArray
-          }
+          selection={selectionArray}
           removeFromArray={removeFromArray}
           submitSelection={submitSelection}
           displaySelection={displaySelection}

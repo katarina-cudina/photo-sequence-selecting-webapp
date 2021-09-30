@@ -1,7 +1,10 @@
 .user-view__container {
   display: flex;
   justify-content: center;
-  padding-top: 20vh;
+  min-height: inherit;
+  background-image: url("./background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .user-view__title {
   font-size: xx-large;
@@ -13,4 +16,7 @@
   justify-content: center;
   width: fit-content;
   align-items: center;
+}
+.user-view > a {
+  color: black;
 }

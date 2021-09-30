@@ -27,14 +27,15 @@ function AreaSelector(props) {
         setImageSrc("data:;base64," + base64);
       });
   };
+  const clearCrop = () => {
+    setCrop({});
+  };
   const displaySelection = (index) => {
-    console.log(props.imageToDisplay.selection[index]);
     const selectionToDisplay = {
       ...props.imageToDisplay.selection[index],
       unit: "px",
       aspect: null,
     };
-    console.log(selectionToDisplay);
     setCrop(selectionToDisplay);
   };
   var isFirstRun = useRef(true);
@@ -57,7 +58,11 @@ function AreaSelector(props) {
         crop={crop}
         onChange={(c) => setCrop(c)}
       />
-      <ManageImageAdmin {...props} displaySelection={displaySelection} />
+      <ManageImageAdmin
+        {...props}
+        displaySelection={displaySelection}
+        clearCrop={clearCrop}
+      />
     </div>
   );
 }

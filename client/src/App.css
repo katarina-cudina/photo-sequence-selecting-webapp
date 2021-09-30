@@ -1,5 +1,6 @@
 .container {
-  padding-bottom: 2.5rem;
+  padding-bottom: 5vh;
+  min-height: 85vh;
 }
 .App {
   position: relative;

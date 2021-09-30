@@ -1,5 +1,5 @@
 .image-slider__container {
-  padding: 0.25rem 0.8rem;
+  padding: 0.25rem 0.8rem 5vh 0.8rem;
 }
 .image-slider__title {
   margin-bottom: 0.25rem;
@@ -31,10 +31,6 @@
 .manage-image__row {
   display: flex;
   justify-content: space-between;
-}
-.selection-row {
-  display: flex;
-  align-items: center;
 }
 .selection-row svg {
   cursor: pointer;

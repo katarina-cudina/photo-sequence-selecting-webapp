@@ -15,7 +15,8 @@ const expireToken = (req, res, next) => {
   try {
     secret = "secret";
     const token = jwt.sign({ userId: 0 }, secret, { expiresIn: 1 });
-    res.status(200).cookie("token", token, { httpOnly: true });
+    console.log(token);
+    res.status(200).cookie("token", token, { httpOnly: true }).json("Log out");
   } catch (err) {
     next(err);
   }

@@ -34,7 +34,7 @@ const Login = (props) => {
           redirectToMain();
         } else if (res.status === 400) alert(res.message);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => alert("Error logging in !"));
   };
   const redirectToMain = () => props.history.push("/home");
   return (

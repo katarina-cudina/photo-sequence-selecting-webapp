@@ -1,7 +1,7 @@
 header {
   background-color: #282828;
   color: white;
-  min-height: 5em;
+  min-height: 10vh;
   display: flex;
   justify-content: space-between;
   padding: 0 0.5rem;
@@ -32,6 +32,7 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
+  min-height: 5vh;
   height: 2.5rem;
   display: flex;
   align-items: center;
